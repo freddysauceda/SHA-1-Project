@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Freddy/Desktop/SHA-1
+vSHA1_hash
+!s110 1458409534
+!i10b 1
+!s100 56:aQLS0]UQWBME246k=]1
+IRTNkJTDEglJG:G;WX5Pan3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1458002432
+8C:/Users/Freddy/Desktop/SHA-1/SHA1_hash_interface.v
+FC:/Users/Freddy/Desktop/SHA-1/SHA1_hash_interface.v
+L0 1
+Z2 OV;L;10.4b;61
+r1
+!s85 0
+31
+!s108 1458409534.000000
+!s107 C:/Users/Freddy/Desktop/SHA-1/SHA1_hash_interface.v|
+!s90 -reportprogress|300|-work|work|C:/Users/Freddy/Desktop/SHA-1/SHA1_hash_interface.v|
+!i113 1
+Z3 o-work work
+n@s@h@a1_hash
+vSHA1_hash_testbench
+!s110 1458409635
+!i10b 1
+!s100 mV;MAD3lD]H=CfW>n[j_K2
+IDmO>fFj?6SfFBY^EUmI=E2
+R1
+R0
+w1457960044
+8C:/Users/Freddy/Desktop/SHA-1/SHA1_hash_testbench_v6.v
+FC:/Users/Freddy/Desktop/SHA-1/SHA1_hash_testbench_v6.v
+L0 13
+R2
+r1
+!s85 0
+31
+!s108 1458409635.000000
+!s107 C:/Users/Freddy/Desktop/SHA-1/SHA1_hash_testbench_v6.v|
+!s90 -reportprogress|300|-work|work|C:/Users/Freddy/Desktop/SHA-1/SHA1_hash_testbench_v6.v|
+!i113 1
+R3
+n@s@h@a1_hash_testbench

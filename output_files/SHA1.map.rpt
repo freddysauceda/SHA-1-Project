@@ -1,0 +1,640 @@
+Analysis & Synthesis report for SHA1
+Mon Mar 14 17:41:35 2016
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |SHA1_hash
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                   ;
++-----------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status       ; Successful - Mon Mar 14 17:41:35 2016      ;
+; Quartus II 64-Bit Version         ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name                     ; SHA1                                       ;
+; Top-level Entity Name             ; SHA1_hash                                  ;
+; Family                            ; Arria II GX                                ;
+; Logic utilization                 ; N/A                                        ;
+;     Combinational ALUTs           ; 4,028                                      ;
+;     Memory ALUTs                  ; 0                                          ;
+;     Dedicated logic registers     ; 2,976                                      ;
+; Total registers                   ; 2976                                       ;
+; Total pins                        ; 310                                        ;
+; Total virtual pins                ; 0                                          ;
+; Total block memory bits           ; 0                                          ;
+; DSP block 18-bit elements         ; 0                                          ;
+; Total GXB Receiver Channel PCS    ; 0                                          ;
+; Total GXB Receiver Channel PMA    ; 0                                          ;
+; Total GXB Transmitter Channel PCS ; 0                                          ;
+; Total GXB Transmitter Channel PMA ; 0                                          ;
+; Total PLLs                        ; 0                                          ;
+; Total DLLs                        ; 0                                          ;
++-----------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; EP2AGX45DF29I5     ;                    ;
+; Top-level entity name                                                           ; SHA1_hash          ; SHA1               ;
+; Family name                                                                     ; Arria II GX        ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                        ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                               ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+; SHA1_hash_interface.v            ; yes             ; User Verilog HDL File  ; C:/Users/Freddy/Desktop/SHA-1/SHA1_hash_interface.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++-----------------------------------------------+-----------+
+; Resource                                      ; Usage     ;
++-----------------------------------------------+-----------+
+; Estimated ALUTs Used                          ; 4028      ;
+;     -- Combinational ALUTs                    ; 4028      ;
+;     -- Memory ALUTs                           ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+; Dedicated logic registers                     ; 2976      ;
+;                                               ;           ;
+; Estimated ALUTs Unavailable                   ; 2736      ;
+;     -- Due to unpartnered combinational logic ; 2736      ;
+;     -- Due to Memory ALUTs                    ; 0         ;
+;                                               ;           ;
+; Total combinational functions                 ; 4028      ;
+; Combinational ALUT usage by number of inputs  ;           ;
+;     -- 7 input functions                      ; 0         ;
+;     -- 6 input functions                      ; 2736      ;
+;     -- 5 input functions                      ; 318       ;
+;     -- 4 input functions                      ; 96        ;
+;     -- <=3 input functions                    ; 878       ;
+;                                               ;           ;
+; Combinational ALUTs by mode                   ;           ;
+;     -- normal mode                            ; 3768      ;
+;     -- extended LUT mode                      ; 0         ;
+;     -- arithmetic mode                        ; 196       ;
+;     -- shared arithmetic mode                 ; 64        ;
+;                                               ;           ;
+; Estimated ALUT/register pairs used            ; 9056      ;
+;                                               ;           ;
+; Total registers                               ; 2976      ;
+;     -- Dedicated logic registers              ; 2976      ;
+;     -- I/O registers                          ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+;                                               ;           ;
+;                                               ;           ;
+; I/O pins                                      ; 310       ;
+;                                               ;           ;
+; DSP block 18-bit elements                     ; 0         ;
+;                                               ;           ;
+; Maximum fan-out node                          ; clk~input ;
+; Maximum fan-out                               ; 2977      ;
+; Total fan-out                                 ; 36927     ;
+; Average fan-out                               ; 4.84      ;
++-----------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
+; |SHA1_hash                 ; 4028 (4028)       ; 2976 (2976)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 310  ; 0            ; |SHA1_hash          ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; kt[25,27]                              ; Stuck at VCC due to stuck port data_in ;
+; kt[18]                                 ; Stuck at GND due to stuck port data_in ;
+; kt[7]                                  ; Stuck at VCC due to stuck port data_in ;
+; fin                                    ; Stuck at VCC due to stuck port data_in ;
+; kt[2,6]                                ; Merged with kt[31]                     ;
+; kt[8,14]                               ; Merged with kt[30]                     ;
+; kt[5,9]                                ; Merged with kt[29]                     ;
+; kt[15]                                 ; Merged with kt[28]                     ;
+; kt[16,19,20]                           ; Merged with kt[26]                     ;
+; kt[10]                                 ; Merged with kt[24]                     ;
+; kt[0]                                  ; Merged with kt[23]                     ;
+; kt[1]                                  ; Merged with kt[21]                     ;
+; kt[4]                                  ; Merged with kt[17]                     ;
+; kt[11]                                 ; Merged with kt[13]                     ;
+; kt[3]                                  ; Merged with kt[12]                     ;
+; kt[24]                                 ; Merged with kt[30]                     ;
+; kt[17]                                 ; Merged with kt[29]                     ;
+; kt[23]                                 ; Merged with kt[31]                     ;
+; kt[22]                                 ; Merged with kt[12]                     ;
+; kt[13]                                 ; Merged with kt[21]                     ;
+; Total Number of Removed Registers = 26 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2976  ;
+; Number of registers using Synchronous Clear  ; 2248  ;
+; Number of registers using Synchronous Load   ; 2292  ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2847  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; H4[4]                                     ; 3       ;
+; H4[5]                                     ; 3       ;
+; H4[6]                                     ; 3       ;
+; H4[7]                                     ; 3       ;
+; H4[8]                                     ; 3       ;
+; H4[13]                                    ; 3       ;
+; H4[14]                                    ; 3       ;
+; H4[15]                                    ; 3       ;
+; H4[17]                                    ; 3       ;
+; H4[20]                                    ; 3       ;
+; H4[22]                                    ; 3       ;
+; H4[23]                                    ; 3       ;
+; H4[24]                                    ; 3       ;
+; H4[25]                                    ; 3       ;
+; H4[30]                                    ; 3       ;
+; H4[31]                                    ; 3       ;
+; H3[1]                                     ; 3       ;
+; H3[2]                                     ; 3       ;
+; H3[4]                                     ; 3       ;
+; H3[5]                                     ; 3       ;
+; H3[6]                                     ; 3       ;
+; H3[10]                                    ; 3       ;
+; H3[12]                                    ; 3       ;
+; H3[14]                                    ; 3       ;
+; H3[17]                                    ; 3       ;
+; H3[20]                                    ; 3       ;
+; H3[21]                                    ; 3       ;
+; H3[28]                                    ; 3       ;
+; H2[1]                                     ; 3       ;
+; H2[2]                                     ; 3       ;
+; H2[3]                                     ; 3       ;
+; H2[4]                                     ; 3       ;
+; H2[5]                                     ; 3       ;
+; H2[6]                                     ; 3       ;
+; H2[7]                                     ; 3       ;
+; H2[10]                                    ; 3       ;
+; H2[11]                                    ; 3       ;
+; H2[12]                                    ; 3       ;
+; H2[14]                                    ; 3       ;
+; H2[15]                                    ; 3       ;
+; H2[17]                                    ; 3       ;
+; H2[19]                                    ; 3       ;
+; H2[20]                                    ; 3       ;
+; H2[21]                                    ; 3       ;
+; H2[23]                                    ; 3       ;
+; H2[27]                                    ; 3       ;
+; H2[28]                                    ; 3       ;
+; H2[31]                                    ; 3       ;
+; H1[0]                                     ; 3       ;
+; H1[3]                                     ; 3       ;
+; H1[7]                                     ; 3       ;
+; H1[8]                                     ; 3       ;
+; H1[9]                                     ; 3       ;
+; H1[11]                                    ; 3       ;
+; H1[13]                                    ; 3       ;
+; H1[15]                                    ; 3       ;
+; H1[16]                                    ; 3       ;
+; H1[18]                                    ; 3       ;
+; H1[19]                                    ; 3       ;
+; H1[22]                                    ; 3       ;
+; H1[23]                                    ; 3       ;
+; H1[24]                                    ; 3       ;
+; H1[25]                                    ; 3       ;
+; H1[26]                                    ; 3       ;
+; H1[27]                                    ; 3       ;
+; H1[29]                                    ; 3       ;
+; H1[30]                                    ; 3       ;
+; H1[31]                                    ; 3       ;
+; H0[0]                                     ; 3       ;
+; H0[8]                                     ; 3       ;
+; H0[9]                                     ; 3       ;
+; H0[13]                                    ; 3       ;
+; H0[16]                                    ; 3       ;
+; H0[18]                                    ; 3       ;
+; H0[22]                                    ; 3       ;
+; H0[24]                                    ; 3       ;
+; H0[25]                                    ; 3       ;
+; H0[26]                                    ; 3       ;
+; H0[29]                                    ; 3       ;
+; H0[30]                                    ; 3       ;
+; D[1]                                      ; 3       ;
+; D[2]                                      ; 3       ;
+; D[4]                                      ; 3       ;
+; D[5]                                      ; 3       ;
+; D[6]                                      ; 3       ;
+; D[10]                                     ; 3       ;
+; D[12]                                     ; 3       ;
+; D[14]                                     ; 3       ;
+; D[17]                                     ; 3       ;
+; D[20]                                     ; 3       ;
+; D[21]                                     ; 3       ;
+; D[28]                                     ; 3       ;
+; C[1]                                      ; 3       ;
+; C[2]                                      ; 3       ;
+; C[3]                                      ; 3       ;
+; C[4]                                      ; 3       ;
+; C[5]                                      ; 3       ;
+; C[6]                                      ; 3       ;
+; C[7]                                      ; 3       ;
+; C[10]                                     ; 3       ;
+; Total number of inverted registers = 160* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 4:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |SHA1_hash|loop[0]           ;
+; 4:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; Yes        ; |SHA1_hash|f[22]             ;
+; 5:1                ; 80 bits   ; 240 ALUTs     ; 0 ALUTs              ; 240 ALUTs              ; Yes        ; |SHA1_hash|B[28]             ;
+; 3:1                ; 14 bits   ; 28 ALUTs      ; 0 ALUTs              ; 28 ALUTs               ; Yes        ; |SHA1_hash|read_amt[14]      ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[79][6]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[78][14]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[77][30]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[76][0]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[75][16]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[74][27]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[73][26]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[72][26]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[71][27]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[70][19]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[69][18]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[68][2]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[67][3]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[66][4]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[65][22]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[64][8]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[63][11]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[62][12]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[61][11]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[60][14]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[59][24]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[58][17]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[57][2]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[56][17]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[55][6]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[54][8]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[53][6]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[52][26]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[51][13]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[50][29]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[49][0]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[48][28]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[47][13]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[46][8]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[45][26]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[44][8]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[43][11]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[42][28]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[41][13]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[40][25]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[39][22]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[38][11]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[37][18]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[36][6]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[35][29]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[34][20]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[33][13]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[32][1]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[31][4]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[30][5]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[29][5]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[28][24]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[27][1]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[26][10]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[25][4]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[24][27]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[23][2]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[22][14]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[21][26]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[20][8]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[19][27]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[18][16]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[17][5]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[16][14]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[14][27]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[13][21]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[12][21]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[11][21]         ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[10][2]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[9][28]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[8][19]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[7][22]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[6][1]           ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[5][18]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[4][13]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[3][29]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[2][12]          ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[1][4]           ;
+; 11:1               ; 28 bits   ; 196 ALUTs     ; 0 ALUTs              ; 196 ALUTs              ; Yes        ; |SHA1_hash|w[0][17]          ;
+; 12:1               ; 3 bits    ; 24 ALUTs      ; 9 ALUTs              ; 15 ALUTs               ; Yes        ; |SHA1_hash|w[15][2]          ;
+; 12:1               ; 25 bits   ; 200 ALUTs     ; 50 ALUTs             ; 150 ALUTs              ; Yes        ; |SHA1_hash|w[15][26]         ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |SHA1_hash|wt[11]            ;
+; 5:1                ; 80 bits   ; 240 ALUTs     ; 80 ALUTs             ; 160 ALUTs              ; Yes        ; |SHA1_hash|C[28]             ;
+; 4:1                ; 192 bits  ; 384 ALUTs     ; 384 ALUTs            ; 0 ALUTs                ; No         ; No name available in netlist ;
+; 4:1                ; 320 bits  ; 640 ALUTs     ; 640 ALUTs            ; 0 ALUTs                ; No         ; No name available in netlist ;
+; 5:1                ; 320 bits  ; 960 ALUTs     ; 960 ALUTs            ; 0 ALUTs                ; No         ; |SHA1_hash|Mux53             ;
+; 16:1               ; 64 bits   ; 640 ALUTs     ; 640 ALUTs            ; 0 ALUTs                ; No         ; No name available in netlist ;
+; 10:1               ; 32 bits   ; 192 ALUTs     ; 192 ALUTs            ; 0 ALUTs                ; No         ; |SHA1_hash|Mux115            ;
+; 10:1               ; 32 bits   ; 192 ALUTs     ; 192 ALUTs            ; 0 ALUTs                ; No         ; |SHA1_hash|Mux34             ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; No         ; |SHA1_hash|Mux9              ;
+; 50:1               ; 32 bits   ; 1056 ALUTs    ; 1056 ALUTs           ; 0 ALUTs                ; No         ; |SHA1_hash|Mux82             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |SHA1_hash ;
++----------------+----------------------------------+-----------------------+
+; Parameter Name ; Value                            ; Type                  ;
++----------------+----------------------------------+-----------------------+
+; H_0            ; 01100111010001010010001100000001 ; Unsigned Binary       ;
+; H_1            ; 11101111110011011010101110001001 ; Unsigned Binary       ;
+; H_2            ; 10011000101110101101110011111110 ; Unsigned Binary       ;
+; H_3            ; 00010000001100100101010001110110 ; Unsigned Binary       ;
+; H_4            ; 11000011110100101110000111110000 ; Unsigned Binary       ;
+; k_0_19         ; 01011010100000100111100110011001 ; Unsigned Binary       ;
+; k_20_39        ; 01101110110110011110101110100001 ; Unsigned Binary       ;
+; k_40_59        ; 10001111000110111011110011011100 ; Unsigned Binary       ;
+; k_60_79        ; 11001010011000101100000111010110 ; Unsigned Binary       ;
++----------------+----------------------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriaii_ff            ; 2976                        ;
+;     ENA               ; 527                         ;
+;     ENA SCLR          ; 28                          ;
+;     ENA SCLR SLD      ; 2212                        ;
+;     ENA SLD           ; 80                          ;
+;     SCLR              ; 8                           ;
+;     plain             ; 121                         ;
+; boundary_port         ; 310                         ;
+; stratixiv_lcell_comb  ; 4110                        ;
+;     arith             ; 196                         ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 174                         ;
+;     normal            ; 3850                        ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 182                         ;
+;         2 data inputs ; 40                          ;
+;         3 data inputs ; 476                         ;
+;         4 data inputs ; 96                          ;
+;         5 data inputs ; 318                         ;
+;         6 data inputs ; 2736                        ;
+;     shared            ; 64                          ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 60                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 5.13                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:23     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Mon Mar 14 17:40:55 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SHA1 -c SHA1
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sha1_hash_interface.v
+    Info (12023): Found entity 1: SHA1_hash
+Info (12127): Elaborating entity "SHA1_hash" for the top level hierarchy
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "port_A_data_in[0]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[1]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[2]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[3]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[4]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[5]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[6]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[7]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[8]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[9]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[10]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[11]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[12]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[13]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[14]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[15]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[16]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[17]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[18]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[19]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[20]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[21]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[22]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[23]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[24]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[25]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[26]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[27]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[28]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[29]" is stuck at GND
+    Warning (13410): Pin "port_A_data_in[30]" is stuck at VCC
+    Warning (13410): Pin "port_A_data_in[31]" is stuck at GND
+    Warning (13410): Pin "port_A_we" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "nreset"
+    Warning (15610): No output dependent on input pin "message_addr[16]"
+    Warning (15610): No output dependent on input pin "message_addr[17]"
+    Warning (15610): No output dependent on input pin "message_addr[18]"
+    Warning (15610): No output dependent on input pin "message_addr[19]"
+    Warning (15610): No output dependent on input pin "message_addr[20]"
+    Warning (15610): No output dependent on input pin "message_addr[21]"
+    Warning (15610): No output dependent on input pin "message_addr[22]"
+    Warning (15610): No output dependent on input pin "message_addr[23]"
+    Warning (15610): No output dependent on input pin "message_addr[24]"
+    Warning (15610): No output dependent on input pin "message_addr[25]"
+    Warning (15610): No output dependent on input pin "message_addr[26]"
+    Warning (15610): No output dependent on input pin "message_addr[27]"
+    Warning (15610): No output dependent on input pin "message_addr[28]"
+    Warning (15610): No output dependent on input pin "message_addr[29]"
+    Warning (15610): No output dependent on input pin "message_addr[30]"
+    Warning (15610): No output dependent on input pin "message_addr[31]"
+Info (21057): Implemented 6633 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 99 input pins
+    Info (21059): Implemented 211 output pins
+    Info (21061): Implemented 6323 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 852 megabytes
+    Info: Processing ended: Mon Mar 14 17:41:35 2016
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:00:48
+
+
